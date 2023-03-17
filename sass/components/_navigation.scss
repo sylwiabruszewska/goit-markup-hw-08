@@ -1,0 +1,77 @@
+// NAVBAR: LOGO + NAV + CONTACT-LIST
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+// MAIN NAVIGATION
+.nav {
+  display: flex;
+
+  &__item:not(:last-child) {
+    margin-right: 32px;
+  }
+}
+
+// CONTACT LIST
+.contact-list {
+  display: flex;
+  margin-left: auto;
+
+  &__item:not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+// LINK STYLES
+.nav__link,
+.contact-list__link {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color $shift;
+
+  &:hover,
+  &:focus {
+    color: $brandColor;
+  }
+}
+
+.nav__link {
+  color: $textColor;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+
+  &--active {
+    color: $brandColor;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: block;
+      height: 4px;
+      width: 100%;
+      top: 45px;
+      background-color: $brandColor;
+      border-radius: 2px;
+    }
+  }
+}
+
+.contact-list__link {
+  color: $colorMediumGray;
+  display: flex;
+  align-items: center;
+}
+
+// CONTACT-LIST ICONS
+.contact-list__icon {
+  fill: $colorMediumGray;
+  transition: fill $shift;
+  margin-right: 10px;
+
+  .contact-list__link:hover & {
+    fill: $brandColor;
+  }
+}

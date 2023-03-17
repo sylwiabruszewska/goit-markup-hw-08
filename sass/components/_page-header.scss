@@ -1,0 +1,6 @@
+// sprawdzić border style w innych miejscach np 1px solid oraz kolor #ececec
+.page-header {
+  border-bottom: $borderHeader;
+  background-color: $colorWhite;
+  padding: 24px;
+}

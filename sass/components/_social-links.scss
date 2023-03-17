@@ -1,0 +1,44 @@
+.social-links {
+  display: flex;
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__icon {
+    fill: $colorGray;
+    transition: fill $shift;
+
+    .social-links__box:hover & {
+      fill: $colorWhite;
+    }
+  }
+
+  &__box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    padding: 12px;
+    display: block;
+    transition: background-color $shift;
+
+    &:hover {
+      background-color: $brandColor;
+    }
+  }
+}
+
+.footer__social-links {
+  @extend .social-links;
+  .social-links__icon {
+    fill: $colorWhite;
+  }
+  .social-links__box {
+    background-color: $boxGray;
+
+    &:hover {
+      background-color: $brandColor;
+    }
+  }
+}

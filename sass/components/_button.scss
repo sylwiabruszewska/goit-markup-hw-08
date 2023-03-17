@@ -1,0 +1,92 @@
+// COMMON STYLES
+.button {
+  border-radius: 4px;
+  border: 0;
+  font-size: 16px;
+
+  transition: color $shift, background $shift, box-shadow $shift;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// BUTTONS: HERO, NEWSLETTER, MODAL
+.hero__button,
+.newsletter__button,
+.modal__button {
+  width: 200px;
+  height: 50px;
+  font-weight: 700;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+}
+
+// INDIVIDUAL TRANSITION STYLES
+.hero__button {
+  color: $colorWhite;
+  background: $brandColor;
+  box-shadow: $boxShadowLight;
+
+  &:hover,
+  &:focus {
+    color: $textColor;
+    background: $colorLightGray;
+    box-shadow: $boxShadowBold;
+  }
+}
+
+.newsletter__button,
+.modal__button {
+  color: $colorWhite;
+  background: $brandColor;
+  box-shadow: $boxShadowLight;
+
+  &:hover,
+  &:focus {
+    background-color: $colorBlue;
+    box-shadow: $boxShadowBold;
+  }
+}
+
+// INDIVIDUAL DISPLAY STYLES
+.newsletter__button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+
+  &__icon {
+    fill: $colorWhite;
+  }
+}
+
+.modal__button {
+  display: block;
+  margin: auto;
+}
+
+// BUTTONS - PORTFOLIO
+.button-group {
+  margin-bottom: 34px;
+  text-align: center;
+}
+
+.portfolio__button {
+  padding: 6px 22px;
+  height: 38px;
+  font-weight: 500;
+  color: $textColor;
+  background: $colorLightGray;
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $colorWhite;
+    background: $brandColor;
+    box-shadow: $boxShadowBold;
+  }
+}

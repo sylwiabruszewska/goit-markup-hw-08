@@ -1,0 +1,41 @@
+.page-footer {
+  background-color: $backgroundColor;
+  padding: 60px;
+
+  &__logo {
+    color: $colorWhite;
+    display: block;
+    margin-bottom: 20px;
+  }
+  & .container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    color: $colorWhite;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+  }
+}
+
+.list-address__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.list-address__link {
+  color: #ffffff99;
+  text-decoration: none;
+  font-style: normal;
+  line-height: 1.71;
+  &:hover {
+    color: #ffffff99;
+    text-decoration: underline;
+  }
+  &--map-link {
+    color: $colorWhite;
+  }
+}
