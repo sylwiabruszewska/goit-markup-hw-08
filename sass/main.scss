@@ -37,9 +37,6 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  @include xl {
-    padding: 0 105px;
-  }
 }
 
 .section {
@@ -60,16 +57,15 @@ ul {
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 // SECTION "Czym się zajmujemy"
 .list-offer {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 94px;
   letter-spacing: 0.03em;
-
-  &__item:not(:last-child) {
-    margin-right: 30px;
-  }
+  text-align: center;
 
   &__title {
     font-weight: 700;
@@ -83,33 +79,57 @@ ul {
     color: $colorMediumGray;
   }
 
-  &__icon {
+  &__box {
     background-color: $colorLightGray;
     border-radius: 4px;
-    padding: 25px 100px;
-    margin-bottom: 30px;
+    height: 120px;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &__icon {
+      margin: 0;
+    }
+
+    @include md {
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+
+      // &__item:not(:last-child) {
+      //   margin-right: 30px;
+      // }
+    }
   }
 }
 
 .gallery-offer {
-  display: flex;
-  justify-content: space-between;
+  display: none;
 
-  &__card {
-    position: relative;
-    margin: 0;
-    &__caption {
-      background-color: rgba(47, 48, 58, 0.8);
-      color: $colorWhite;
-      line-height: 1.15;
-      text-transform: uppercase;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      padding: 27px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
+  @include xl {
+    display: flex;
+    justify-content: space-between;
+
+    &__card {
+      position: relative;
+      margin: 0;
+      &__caption {
+        background-color: rgba(47, 48, 58, 0.8);
+        color: $colorWhite;
+        line-height: 1.15;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 27px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+      }
     }
   }
 }
@@ -120,9 +140,6 @@ ul {
 }
 
 .gallery-staff {
-  display: flex;
-  justify-content: space-between;
-
   &__item {
     box-shadow: $boxShadowMedium;
     border-radius: 0px 0px 4px 4px;
@@ -150,6 +167,11 @@ ul {
     letter-spacing: 0.03em;
     color: $colorMediumGray;
     margin-bottom: 16px;
+  }
+
+  @include md {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

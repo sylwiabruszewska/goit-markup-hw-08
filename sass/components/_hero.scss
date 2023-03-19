@@ -2,13 +2,17 @@
   background-color: $backgroundColor;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background: $backgroundGradient, url(../images/hero.jpg) no-repeat;
-  background-size: 1600px;
-  background-position: 50%;
-  padding: 200px 0;
+  background-size: cover;
   height: 400px;
 
   @include md {
     height: 600px;
+  }
+
+  @include xl {
+    padding: 200px 0;
+    background-position: 50%;
+    background-size: 1600px;
   }
 
   & .container {
@@ -18,13 +22,20 @@
 
 .hero__text {
   font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
+  font-size: 26px;
+  line-height: 1.62;
   text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: $colorWhite;
-  width: 696px;
+  width: 365px;
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+
+  @include xl {
+    font-size: 44px;
+    line-height: 1.36;
+    width: 696px;
+    margin: 0 auto;
+  }
 }

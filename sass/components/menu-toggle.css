@@ -1,31 +1,26 @@
-@import "../utils/variables";
-@import "../utils/media";
-
 .menu-toggle {
   min-height: 40px;
   min-width: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin: 0;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
   border: none;
-
-  @include md {
+}
+@media (min-width: 768px) {
+  .menu-toggle {
     display: none;
   }
 }
 
 .menu-icon {
-  fill: $colorBlack;
-
-  &:hover,
-  &:active {
-    fill: $brandColor;
-  }
+  fill: #000000;
+}
+.menu-icon:hover, .menu-icon:active {
+  fill: #2196f3;
 }
 
 .menu-container {
@@ -35,11 +30,10 @@
   width: 100vw;
   height: 100vh;
   padding: 32px;
-  background-color: $colorWhite;
+  background-color: #ffffff;
   z-index: 999;
-
   transform: translateX(100%);
-  transition: transform $shift;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-container.is-open {
@@ -65,11 +59,9 @@
   font-size: 40px;
   line-height: 1.175;
   letter-spacing: 0.02em;
-
-  color: $brandColor;
+  color: #2196f3;
   text-decoration: none;
-
-  &:not(:last-child) {
-    margin-bottom: 32px;
-  }
 }
+.mobile-menu__link:not(:last-child) {
+  margin-bottom: 32px;
+}/*# sourceMappingURL=menu-toggle.css.map */
