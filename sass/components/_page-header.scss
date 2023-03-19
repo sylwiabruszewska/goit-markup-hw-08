@@ -2,5 +2,19 @@
 .page-header {
   border-bottom: $borderHeader;
   background-color: $colorWhite;
-  padding: 24px;
+}
+
+.page-header__container {
+  height: 60px;
+
+  @include md {
+    height: 80px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include md {
+    justify-content: flex-start;
+  }
 }

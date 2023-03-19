@@ -1,15 +1,17 @@
-@use "utils/variables";
-@use "components/button";
-@use "components/hero";
-@use "components/logo";
-@use "components/modal";
-@use "components/navigation";
-@use "components/newsletter-form";
-@use "components/order-form";
-@use "components/page-header";
-@use "components/portfolio-gallery";
-@use "components/social-links";
-@use "components/page-footer";
+@import "./utils/variables";
+@import "./utils/media";
+@import "./components/button";
+@import "./components/hero";
+@import "./components/logo";
+@import "./components/modal";
+@import "./components/navigation";
+@import "./components/newsletter-form";
+@import "./components/order-form";
+@import "./components/page-header";
+@import "./components/portfolio-gallery";
+@import "./components/social-links";
+@import "./components/page-footer";
+@import "./components/menu-toggle.scss";
 
 // GLOBAL SELECTORS
 body {
@@ -31,9 +33,13 @@ ul {
 
 // SECTION, CONTAINER
 .container {
-  width: 1200px;
+  min-width: 320px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  @include xl {
+    padding: 0 105px;
+  }
 }
 
 .section {
@@ -179,3 +185,22 @@ ul {
     fill: $brandColor;
   }
 }
+
+// @media screen and (max-width: 480px) {
+//   body {
+//     background-color: #4caf50;
+//     font-size: 50px;
+//   }
+// }
+
+// @media screen and (max-width: 768px) {
+//   body {
+//     background-color: #3f51b5;
+//   }
+// }
+
+// @media screen and (max-width: 1200px) {
+//   body {
+//     background-color: #ff5722;
+//   }
+// }
