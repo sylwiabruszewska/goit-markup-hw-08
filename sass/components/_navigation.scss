@@ -1,6 +1,7 @@
 // MAIN NAVIGATION
 .nav {
   display: none;
+
   @include md {
     display: flex;
 
@@ -13,10 +14,12 @@
 // CONTACT LIST
 .contact-list {
   display: none;
+
   @include md {
     display: flex;
     margin-left: auto;
   }
+
   @include md-max {
     flex-direction: column;
     &__item:not(:last-child) {
