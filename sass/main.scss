@@ -70,6 +70,7 @@ ul {
 
   @include xl {
     display: block;
+    padding-top: 0;
   }
 }
 
@@ -77,8 +78,6 @@ ul {
 .list-offer {
   letter-spacing: 0.03em;
   text-align: center;
-  display: flex;
-  gap: 30px;
 
   &__item {
     @include md {
@@ -134,7 +133,7 @@ ul {
     position: relative;
     margin: 0;
 
-    &__caption {
+    & figcaption {
       background-color: rgba(47, 48, 58, 0.8);
       color: $colorWhite;
       line-height: 1.15;
@@ -156,11 +155,21 @@ ul {
 }
 
 .gallery-staff {
+  @include md {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  @include md-max {
+    flex-wrap: wrap;
+  }
+
   &__item {
-    // width: 450px;
     box-shadow: $boxShadowMedium;
     border-radius: 0px 0px 4px 4px;
     background-color: $colorWhite;
+    margin: 0;
 
     @include sm-max {
       &:not(:last-child) {
@@ -168,7 +177,7 @@ ul {
       }
     }
 
-    @include md-max {
+    @include md {
       /*  Set the width of the elements  */
       flex-basis: calc((100% - 30px) / 2);
     }
@@ -196,28 +205,31 @@ ul {
     color: $colorMediumGray;
     margin-bottom: 16px;
   }
-
-  @include md {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 
 // SECTION "NASI KLIENCI"
 
 .list-clients {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
-  // justify-content: space-between;
+
+  @include md-max {
+    flex-wrap: wrap;
+  }
 
   &__item {
     border: 1px solid $colorGray;
     border-radius: 4px;
-    margin-right: 30px;
     transition: border-color $shift;
 
-    flex-basis: calc((100% - 30px) / 2);
+    @include sm {
+      flex-basis: calc((100% - 30px) / 2);
+    }
+
+    @include md {
+      flex-basis: calc((100% - 60px) / 3);
+    }
 
     &:hover {
       border-color: $brandColor;
@@ -228,12 +240,14 @@ ul {
 .list-clients__link {
   cursor: pointer;
   display: block;
-  padding: 16px 32px;
+  display: flex;
+  height: 92px;
 }
 
 .list-clients__icon {
   fill: $colorGray;
   transition: fill $shift;
+  margin: auto;
 
   .list-clients__item:hover & {
     fill: $brandColor;
