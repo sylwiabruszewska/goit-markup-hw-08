@@ -40,7 +40,11 @@ ul {
 }
 
 .section {
-  padding: 94px 0;
+  padding: 60px 0;
+
+  @include xl {
+    padding: 94px 0;
+  }
 
   &__heading {
     font-weight: 700;
@@ -49,7 +53,11 @@ ul {
     text-align: center;
     letter-spacing: 0.03em;
     color: $textColor;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @include xl {
+      margin-bottom: 50px;
+    }
   }
 }
 
@@ -57,15 +65,27 @@ ul {
   display: block;
 }
 
-.hidden {
+.section__hidden {
   display: none;
+
+  @include xl {
+    display: block;
+  }
 }
 
 // SECTION "Czym się zajmujemy"
 .list-offer {
-  margin-bottom: 94px;
   letter-spacing: 0.03em;
   text-align: center;
+  display: flex;
+  gap: 30px;
+
+  &__item {
+    @include md {
+      /*  Set the width of the elements  */
+      flex-basis: calc((100% - 30px) / 2);
+    }
+  }
 
   &__title {
     font-weight: 700;
@@ -84,26 +104,21 @@ ul {
     border-radius: 4px;
     height: 120px;
     display: flex;
+    margin-bottom: 30px;
+  }
 
-    &:not(:last-child) {
-      margin-bottom: 30px;
-    }
+  &__icon {
+    margin: auto;
+  }
 
-    &__icon {
-      margin: 0;
-    }
-
-    @include md {
-      text-align: left;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-
-      // &__item:not(:last-child) {
-      //   margin-right: 30px;
-      // }
-    }
+  @include md {
+    text-align: left;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+  }
+  @include md-max {
+    flex-wrap: wrap;
   }
 }
 
@@ -113,23 +128,24 @@ ul {
   @include xl {
     display: flex;
     justify-content: space-between;
+  }
 
-    &__card {
-      position: relative;
-      margin: 0;
-      &__caption {
-        background-color: rgba(47, 48, 58, 0.8);
-        color: $colorWhite;
-        line-height: 1.15;
-        text-transform: uppercase;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        padding: 27px;
-        font-weight: 700;
-        letter-spacing: 0.03em;
-      }
+  &__card {
+    position: relative;
+    margin: 0;
+
+    &__caption {
+      background-color: rgba(47, 48, 58, 0.8);
+      color: $colorWhite;
+      line-height: 1.15;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 27px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
     }
   }
 }
@@ -141,10 +157,22 @@ ul {
 
 .gallery-staff {
   &__item {
+    // width: 450px;
     box-shadow: $boxShadowMedium;
     border-radius: 0px 0px 4px 4px;
     background-color: $colorWhite;
-    margin: 0;
+
+    @include sm-max {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include md-max {
+      /*  Set the width of the elements  */
+      flex-basis: calc((100% - 30px) / 2);
+    }
+
     & figcaption {
       padding: 30px;
     }
@@ -179,7 +207,9 @@ ul {
 
 .list-clients {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  // justify-content: space-between;
 
   &__item {
     border: 1px solid $colorGray;
@@ -187,16 +217,18 @@ ul {
     margin-right: 30px;
     transition: border-color $shift;
 
+    flex-basis: calc((100% - 30px) / 2);
+
     &:hover {
       border-color: $brandColor;
     }
   }
+}
 
-  .list-clients__link {
-    cursor: pointer;
-    display: block;
-    padding: 16px 32px;
-  }
+.list-clients__link {
+  cursor: pointer;
+  display: block;
+  padding: 16px 32px;
 }
 
 .list-clients__icon {
