@@ -80,6 +80,8 @@ ul {
   text-align: center;
 
   &__item {
+    margin-bottom: 30px;
+
     @include md {
       /*  Set the width of the elements  */
       flex-basis: calc((100% - 30px) / 2);
@@ -170,6 +172,7 @@ ul {
     border-radius: 0px 0px 4px 4px;
     background-color: $colorWhite;
     margin: 0;
+    width: 450px;
 
     @include sm-max {
       &:not(:last-child) {
