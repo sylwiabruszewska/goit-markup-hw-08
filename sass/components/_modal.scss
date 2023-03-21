@@ -19,13 +19,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
-  min-height: 581px;
+  width: 450px;
+  min-height: 609px;
   background: $colorWhite;
   box-shadow: $boxShadowMedium;
   border-radius: 4px;
   transition: transform 500ms ease;
   padding: 40px;
+
+  @include xl {
+    width: 528px;
+    min-height: 581px;
+  }
 
   .is-hidden & {
     transform: translate(-50%, 100%);

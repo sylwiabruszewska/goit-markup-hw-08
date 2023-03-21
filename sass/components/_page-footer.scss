@@ -29,6 +29,11 @@
   &__box {
     margin-bottom: 60px;
     text-align: center;
+
+    @include xl {
+      text-align: left;
+      margin-bottom: 0;
+    }
   }
 
   &__text {
