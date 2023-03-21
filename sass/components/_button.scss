@@ -84,11 +84,15 @@
 }
 
 .portfolio__button {
-  padding: 6px 22px;
+  padding: 6px 28px;
   height: 38px;
   font-weight: 500;
   color: $textColor;
   background: $colorLightGray;
+
+  @include xl {
+    padding: 6px 22px;
+  }
 
   &:hover,
   &:focus {
