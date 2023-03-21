@@ -33,10 +33,28 @@ ul {
 
 // SECTION, CONTAINER
 .container {
-  min-width: 320px;
-  max-width: 1200px;
-  margin: 0 auto;
+  min-width: 300px;
+  max-width: 320px;
+  margin: 0px auto;
   padding: 0 15px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .container {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
 }
 
 .section {
@@ -157,10 +175,16 @@ ul {
 }
 
 .gallery-staff {
+  display: flex;
+  gap: 30px;
+
+  @include sm-max {
+    flex-direction: column;
+    align-items: center;
+  }
+
   @include md {
-    display: flex;
     justify-content: center;
-    gap: 30px;
   }
 
   @include md-max {
@@ -172,17 +196,12 @@ ul {
     border-radius: 0px 0px 4px 4px;
     background-color: $colorWhite;
     margin: 0;
-    width: 450px;
-
-    @include sm-max {
-      &:not(:last-child) {
-        margin-bottom: 30px;
-      }
-    }
+    max-width: 450px;
 
     @include md {
       /*  Set the width of the elements  */
       flex-basis: calc((100% - 30px) / 2);
+      max-width: 354px;
     }
 
     & figcaption {
@@ -208,6 +227,14 @@ ul {
     color: $colorMediumGray;
     margin-bottom: 16px;
   }
+  // &__box {
+  //   @include md {
+  //
+  //   }
+  //   @include xl {
+  //     max-width: 270px;
+  //   }
+  // }
 }
 
 // SECTION "NASI KLIENCI"
