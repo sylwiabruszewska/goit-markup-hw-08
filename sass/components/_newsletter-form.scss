@@ -11,7 +11,7 @@
 
   &__input {
     height: 50px;
-    width: 450px;
+    width: 290px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: $boxShadowLight;
     border-radius: 4px;
@@ -21,6 +21,9 @@
     padding: 15px 16px;
     margin-right: 12px;
     transition: border-color $shift, box-shadow $shift;
+
+    @include md {
+     width:450px;}
 
     @include xl {
       width: 358px;
