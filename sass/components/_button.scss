@@ -76,6 +76,7 @@
   @include sm-max {
     flex-wrap: wrap;
     justify-content: start;
+    padding: 0 15px;
   }
 
   @include md {
