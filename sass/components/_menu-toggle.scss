@@ -78,6 +78,10 @@
     color: $brandColor;
     cursor: pointer;
   }
+
+  &--active {
+    color: $brandColor;
+  }
 }
 
 .mobile-contacts {
