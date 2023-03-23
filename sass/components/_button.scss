@@ -70,17 +70,28 @@
 .button-group {
   margin-bottom: 34px;
   text-align: center;
+  display: flex;
+  gap: 15px 8px;
+
+  @include sm-max {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+
+  @include md {
+    justify-content: center;
+  }
 }
 
 .portfolio__button {
-  padding: 6px 22px;
+  padding: 6px 28px;
   height: 38px;
   font-weight: 500;
   color: $textColor;
   background: $colorLightGray;
 
-  &:not(:last-child) {
-    margin-right: 8px;
+  @include xl {
+    padding: 6px 22px;
   }
 
   &:hover,

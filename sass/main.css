@@ -60,17 +60,32 @@
 .button-group {
   margin-bottom: 34px;
   text-align: center;
+  display: flex;
+  gap: 15px 8px;
+}
+@media (max-width: 767px) {
+  .button-group {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+}
+@media (min-width: 768px) {
+  .button-group {
+    justify-content: center;
+  }
 }
 
 .portfolio__button {
-  padding: 6px 22px;
+  padding: 6px 28px;
   height: 38px;
   font-weight: 500;
   color: #212121;
   background: #f5f4fa;
 }
-.portfolio__button:not(:last-child) {
-  margin-right: 8px;
+@media (min-width: 1200px) {
+  .portfolio__button {
+    padding: 6px 22px;
+  }
 }
 .portfolio__button:hover, .portfolio__button:focus {
   color: #ffffff;
