@@ -2,11 +2,16 @@
 .newsletter-form {
   display: flex;
   align-items: center;
-  text-align: center;
+  // text-align: center;
+  row-gap: 20px;
+
+  @include md-max {
+    flex-direction: column;
+  }
 
   &__input {
     height: 50px;
-    width: 358px;
+    width: 450px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: $boxShadowLight;
     border-radius: 4px;
@@ -16,6 +21,10 @@
     padding: 15px 16px;
     margin-right: 12px;
     transition: border-color $shift, box-shadow $shift;
+
+    @include xl {
+      width: 358px;
+    }
 
     &:focus,
     &:hover {
