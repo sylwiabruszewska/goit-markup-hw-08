@@ -55,7 +55,7 @@
 
   &__img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: 294px;
     object-fit: cover;
   }
@@ -95,13 +95,17 @@
 // PORTFOLIO CAPTION
 .portfolio {
   &__caption {
-    width: 450px;
+    // width: 450px;
     padding: 20px 24px;
     margin: 0;
     border-right: $borderPortfolio;
     border-bottom: $borderPortfolio;
     border-left: $borderPortfolio;
     text-align: left;
+
+    @include sm {
+      width: 450px;
+    }
 
     @include md {
       width: 354px;
